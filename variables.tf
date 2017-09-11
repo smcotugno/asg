@@ -1,3 +1,6 @@
+variable "softlayer_username" {}
+variable "softlayer_api_key" {}
+
 variable "ssh-key" {
   default = ""
 }
@@ -83,7 +86,7 @@ variable "vm-memory" {
 }
 
 variable "vm-os-reference-code" {
-  default = "UBUNTU_14_64"
+  default = "CENTOS_7"
 }
 
 variable "vm-post-install-script-uri" {

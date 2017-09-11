@@ -1,4 +1,7 @@
-provider "ibm" {}
+provider "ibm" {
+  softlayer_username = "${var.softlayer_username}"
+  softlayer_api_key  = "${var.softlayer_api_key}"
+}
 
 # Create a new ssh key 
 resource "ibm_compute_ssh_key" "ssh_key_performance" {

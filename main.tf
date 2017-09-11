@@ -1,10 +1,5 @@
-provider "ibm" {
-  softlayer_username = "${var.softlayer_username}"
-  softlayer_api_key  = "${var.softlayer_api_key}"
-}
-
 # Create a new ssh key 
-resource "ibm_compute_ssh_key" "ssh_key_performance" {
+resource "ibm_compute_ssh_key" "ssh_key" {
   label      = "${var.ssh-label}-${random_id.val.hex}"
   notes      = "for scale group"
   public_key = "${var.ssh-key}"
@@ -46,7 +41,7 @@ resource "ibm_compute_autoscale_group" "sample-http-cluster" {
     memory                  = "${var.vm-memory}"
     os_reference_code       = "${var.vm-os-reference-code}"
     datacenter              = "${var.datacenter}"
-    ssh_key_ids             = ["${ibm_compute_ssh_key.ssh_key_performance.id}"]
+    ssh_key_ids             = ["${ibm_compute_ssh_key.ssh_key.id}"]
     post_install_script_uri = "${var.vm-post-install-script-uri}"
   }
 }

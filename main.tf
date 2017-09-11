@@ -26,7 +26,7 @@ resource "ibm_lb_service_group" "lb_service_group" {
 }
 
 resource "ibm_compute_autoscale_group" "sample-http-cluster" {
-  name                 = "${var.auto-scale-name}"
+  name                 = "${var.auto-scale-name}-${random_id.val.hex}"
   regional_group       = "${var.auto-scale-region}"
   cooldown             = "${var.auto-scale-cooldown}"
   minimum_member_count = "${var.auto-scale-minimum-member-count}"
@@ -68,4 +68,8 @@ resource "ibm_compute_autoscale_policy" "sample-http-cluster-policy" {
       period   = 130
     }
   }
+}
+
+resource "random_id" "val" {
+  byte_length = "4"
 }

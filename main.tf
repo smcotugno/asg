@@ -4,7 +4,7 @@ provider "ibm" {}
 resource "ibm_compute_ssh_key" "ssh_key_performance" {
   label      = "${var.ssh-label}"
   notes      = "for scale group"
-  public_key = "${var.ssh_key}"
+  public_key = "${var.ssh-key}"
 }
 
 resource "ibm_lb" "local_lb" {

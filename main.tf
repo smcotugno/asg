@@ -5,7 +5,7 @@ provider "ibm" {
 
 # Create a new ssh key 
 resource "ibm_compute_ssh_key" "ssh_key_performance" {
-  label      = "${var.ssh-label}"
+  label      = "${var.ssh-label}-${random_id.val.hex}"
   notes      = "for scale group"
   public_key = "${var.ssh-key}"
 }
@@ -52,7 +52,7 @@ resource "ibm_compute_autoscale_group" "sample-http-cluster" {
 }
 
 resource "ibm_compute_autoscale_policy" "sample-http-cluster-policy" {
-  name           = "${var.scale-policy-name}"
+  name           = "${var.scale-policy-name}-${random_id.val.hex}"
   scale_type     = "${var.scale-policy-type}"
   scale_amount   = "${var.scale-policy-scale-amount}"
   cooldown       = "${var.scale-policy-cooldown}"
@@ -71,5 +71,5 @@ resource "ibm_compute_autoscale_policy" "sample-http-cluster-policy" {
 }
 
 resource "random_id" "val" {
-  byte_length = "4"
+  byte_length = "2"
 }

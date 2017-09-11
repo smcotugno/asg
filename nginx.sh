@@ -1,4 +1,5 @@
 #!/bin/bash -v
-apt-get update -y
-apt-get install -y nginx > /tmp/nginx.log
-service nginx start
+yum upgrade -y
+yum install epel-release -y
+yum install nginx -y
+systemctl start nginx

@@ -90,7 +90,7 @@ variable "vm-os-reference-code" {
 }
 
 variable "vm-post-install-script-uri" {
-  default = "https://raw.githubusercontent.com/Cloud-Schematics/ibm-compute-asg/master/nginx.sh"
+  default = "https://raw.githubusercontent.com/Cloud-Schematics/asg/master/nginx.sh"
 }
 
 variable "scale-policy-name" {

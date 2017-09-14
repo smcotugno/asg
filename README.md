@@ -1,29 +1,9 @@
-# Auto Scale Group example
+# NGINX Auto Scale Group
 
-This example shows how to launch a cluster using Auto Scaling Groups and Local load balancer.
+This sample shows how to launch a auto scaling group of virtual machines with a local load balancer.
 
-This creates a cluster with the ability to automate the manual scaling process associated with adding or removing virtual servers to support your business applications.
-It distribute processing and communications evenly across multiple servers within a data center so that a single device does not carry the entire load.
-The cluster installs nginx and it listens on port 80.
+NGINX is loaded onto the virtual machine images.
 
-To run, configure your IBM Cloud provider
+## Variables
 
-Running the example
-
-For planning phase 
-
-```
-terraform plan
-```
-
-For apply phase
-
-```
-terraform apply
-```
-
-To remove the stack wait for few minutes and test the stack by launching a browser with cluster url.
-
-```
- terraform destroy
-```
+See the file [`variables.tf`](./variables.tf)

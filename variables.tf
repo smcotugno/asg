@@ -1,5 +1,5 @@
-variable "softlayer_username" {}
-variable "softlayer_api_key" {}
+variable "softlayer-username" {}
+variable "softlayer-api-key" {}
 
 variable "ssh-key" {
   default = ""
@@ -21,19 +21,19 @@ variable "lb-dedicated" {
   default = false
 }
 
-variable "lb-servvice-group-port" {
+variable "lb-service-group-port" {
   default = 80
 }
 
-variable "lb-servvice-group-routing-method" {
+variable "lb-service-group-routing-method" {
   default = "CONSISTENT_HASH_IP"
 }
 
-variable "lb-servvice-group-routing-type" {
+variable "lb-service-group-routing-type" {
   default = "HTTP"
 }
 
-variable "lb-servvice-group-routing-allocation" {
+variable "lb-service-group-routing-allocation" {
   default = 100
 }
 

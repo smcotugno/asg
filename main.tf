@@ -13,11 +13,11 @@ resource "ibm_lb" "local_lb" {
 }
 
 resource "ibm_lb_service_group" "lb_service_group" {
-  port             = "${var.lb-servvice-group-port}"
-  routing_method   = "${var.lb-servvice-group-routing-method}"
-  routing_type     = "${var.lb-servvice-group-routing-type}"
+  port             = "${var.lb-service-group-port}"
+  routing_method   = "${var.lb-service-group-routing-method}"
+  routing_type     = "${var.lb-service-group-routing-type}"
   load_balancer_id = "${ibm_lb.local_lb.id}"
-  allocation       = "${var.lb-servvice-group-routing-allocation}"
+  allocation       = "${var.lb-service-group-routing-allocation}"
 }
 
 resource "ibm_compute_autoscale_group" "sample-http-cluster" {

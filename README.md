@@ -27,7 +27,7 @@ Environments can be used to separate software components into development tiers 
 |auto-scale-name|Name of the auto scaling group.|sample-http-cluster|
 |auto-scale-region|Regional group for the auto scaling group.|na-usa-central-1|
 |auto-scale-termination-policy|The termination policy for the auto scaling group.|CLOSEST_TO_NEXT_CHARGE|
-|datacenter|The data center for the local load balancer.|dal09|
+|datacenter|The data center for the local load balancer. You can run `bluemix cs locations` to see a list of all data centers in your region.|dal09|
 |lb-connections|The number of connections for the local load balancer.|250|
 |lb-dedicated|Set to `true` if the local load balancer should be dedicated. |false|
 |lb-service-group-port|The port for the local load balancer service group.|80|

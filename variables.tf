@@ -1,8 +1,9 @@
 variable "softlayer-username" {
   description = "Your Bluemix Infrastructure (SoftLayer) user name."
 }
+
 variable "softlayer-api-key" {
-  description = "Your Bluemix Infrastructure (SoftLayer) API key.”
+  description = "Your Bluemix Infrastructure (Softlayer) API key."
 }
 
 variable "ssh-key" {
